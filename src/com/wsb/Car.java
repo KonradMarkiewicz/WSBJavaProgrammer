@@ -5,7 +5,7 @@ public class Car {
     final public String producer;
     final public String model;
     public final String color;
-    public final Double value;
+    public Double value;
 
     public Car(Integer yearOfProduction, String producer, String model, String color, Double value) {
         this.yearOfProduction = yearOfProduction;
@@ -13,5 +13,9 @@ public class Car {
         this.model = model;
         this.color = color;
         this.value = value;
+    }
+
+    public Double getCarValue() {
+        return value;
     }
 }

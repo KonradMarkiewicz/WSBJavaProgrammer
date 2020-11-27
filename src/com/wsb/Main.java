@@ -14,7 +14,12 @@ public class Main {
         }
 
         Car fiat = new Car(2003, "Fiat", "Bravo", "gray", 10000.0);
-        System.out.println("\n" + fiat.producer + " " + fiat.model + " " + fiat.yearOfProduction + "\n" + fiat.color + " " + fiat.value + " PLN");
-        human.car = fiat;
+        System.out.println("\n" + fiat.producer + " " + fiat.model + " " + fiat.yearOfProduction + "\n" + fiat.color + " " + fiat.value + " PLN" + "\n");
+
+        human.getSalary();
+        human.setSalary(100.0);
+        human.getSalary();
+
+        human.setCar(fiat);
     }
 }
