@@ -1,6 +1,8 @@
 package com.wsb.devices;
 
-public class Car extends Device {
+import java.io.Serializable;
+
+public class Car extends Device implements Saleable, Serializable, Comparable {
     public String color;
     public Double value;
 
@@ -15,6 +17,15 @@ public class Car extends Device {
     }
 
     @Override
+    public void turnOn() {
+        System.out.println("key turned on");
+        System.out.println("not working");
+        System.out.println("key turned on");
+        System.out.println("its working");
+        System.out.println("engine started");
+    }
+
+    @Override
     public String toString() {
         return "Car{" +
                 "color='" + color + '\'' +
@@ -26,4 +37,18 @@ public class Car extends Device {
     }
 
 
+    @Override
+    public void sell() {
+        System.out.println("Sold!");
+    }
+
+    @Override
+    public void sellOnCredit() {
+        System.out.println("Sold on bank credit!");
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        return 0;
+    }
 }

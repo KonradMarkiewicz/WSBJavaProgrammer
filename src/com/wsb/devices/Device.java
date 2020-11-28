@@ -1,6 +1,6 @@
 package com.wsb.devices;
 
-public class Device {
+public abstract class Device {
     public Integer yearOfProduction;
     public String producer;
     public String model;
@@ -10,6 +10,8 @@ public class Device {
         this.producer = producer;
         this.model = model;
     }
+
+    public abstract void turnOn();
 
     @Override
     public String toString() {

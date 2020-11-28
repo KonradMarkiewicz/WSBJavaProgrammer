@@ -9,17 +9,17 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Human human = new Human();
+//        Human human = new Human();
 
-        Animal pet = new Animal("cat");
-        human.pet = pet;
-        while (pet.isAlive) {
-            pet.takeForAWalk();
-            pet.feed(0.5);
-        }
+//        Animal pet = new Animal("cat");
+//        human.pet = pet;
+//        while (pet.isAlive) {
+//            pet.takeForAWalk();
+//            pet.feed(0.5);
+//        }
 
         Car fiat = new Car(2003, "Fiat", "Bravo", "gray", 10000.0);
-        System.out.println("\n" + fiat.producer + " " + fiat.model + " " + fiat.yearOfProduction + "\n" + fiat.color + " " + fiat.value + " PLN" + "\n");
+//        System.out.println("\n" + fiat.producer + " " + fiat.model + " " + fiat.yearOfProduction + "\n" + fiat.color + " " + fiat.value + " PLN" + "\n");
 
         Phone phone = new Phone(1999, "Nokia", "3310", 2.0);
 
