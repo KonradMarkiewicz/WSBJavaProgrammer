@@ -1,5 +1,7 @@
 package com.wsb.devices;
 
+import com.wsb.creatures.Human;
+
 import java.io.Serializable;
 
 public class Car extends Device implements Saleable, Serializable, Comparable {
@@ -36,15 +38,25 @@ public class Car extends Device implements Saleable, Serializable, Comparable {
                 '}';
     }
 
-
     @Override
-    public void sell() {
-        System.out.println("Sold!");
-    }
+    public void sell(Human seller, Human buyer, Double price) throws Exception {
+        if (seller.cash == null || buyer.cash == null) {
+            throw new Exception("Musisz zdefiniować stan konta");
+        }
+        if (seller.getCar() == null) {
+            System.out.println("Sorry nie masz samochodu");
+            throw new Exception("Brak samochodu");
+        }
+        if (buyer.getCash() < price) {
+            System.out.println("Sorry nie masz tyle kasy");
+            throw new Exception("Brak pieniędzy");
+        }
+        buyer.setCash(buyer.getCash() - price);
+        seller.setCash(seller.getCash() + price);
 
-    @Override
-    public void sellOnCredit() {
-        System.out.println("Sold on bank credit!");
+        buyer.setCar(seller.getCar());
+        seller.setCar(null);
+        System.out.println("samochód sprzedano za " + price + " od " + seller.firstName + " do " + buyer.firstName);
     }
 
     @Override

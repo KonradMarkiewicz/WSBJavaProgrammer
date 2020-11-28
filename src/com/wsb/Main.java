@@ -9,10 +9,10 @@ public class Main {
 
     public static void main(String[] args) {
 
-//        Human human = new Human();
+        Human me = new Human("John", "Doe");
 
 //        Animal pet = new Animal("cat");
-//        human.pet = pet;
+//        me.pet = pet;
 //        while (pet.isAlive) {
 //            pet.takeForAWalk();
 //            pet.feed(0.5);
@@ -23,22 +23,42 @@ public class Main {
 
         Phone phone = new Phone(1999, "Nokia", "3310", 2.0);
 
-//        human.getSalary();
-//        human.setSalary(10000.0);
-//        human.getSalary();
+//        me.getSalary();
+//        me.setSalary(10000.0);
+//        me.getSalary();
+//        me.setCar(fiat);
 //
-//        human.setCar(fiat);
-//
-//        System.out.println(human.getCar());
+//        System.out.println(me.getCar());
 //
 //        System.out.println(fiat);
 //        System.out.println(pet);
 //        System.out.println(phone);
 //
-//        System.out.println(human instanceof Human);
-//        System.out.println(human instanceof Animal);
+//        System.out.println(me instanceof Human);
+//        System.out.println(me instanceof Animal);
+//
+//        System.out.println(phone);
+//        System.out.println(fiat);
 
-        System.out.println(phone);
-        System.out.println(fiat);
+        me.phone = phone;
+        me.setSalary(10000.0);
+        me.setCash(10000.0);
+        me.setCar(fiat);
+
+        Human brotherInLaw = new Human("Tom", "Jones");
+        brotherInLaw.setCash(3000.0);
+
+        try {
+            phone.sell(me, brotherInLaw, 50.0);
+        } catch (Exception e) {
+            System.out.println("Sorry, nie udało się sprzedać");
+            System.out.println(e.getMessage());
+        }
+
+        try {
+            fiat.sell(me, brotherInLaw, 1000.0);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

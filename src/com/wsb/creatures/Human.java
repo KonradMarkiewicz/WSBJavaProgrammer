@@ -1,6 +1,7 @@
 package com.wsb.creatures;
 
 import com.wsb.devices.Car;
+import com.wsb.devices.Phone;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -10,10 +11,29 @@ public class Human extends Animal {
     public String firstName;
     public String lastName;
     public Double salary;
+    public Phone phone;
     private Car car;
+    public Double cash;
 
-    public Human() {
+    public Human(String firstName, String lastName) {
         super("homo sapiens");
+        this.cash = 0.0;
+        this.salary = 0.0;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    public Double getCash() {
+        return cash;
+    }
+
+    public void setCash(Double cash) {
+        if (cash != null) {
+            this.cash = cash;
+        } else {
+            System.out.println("nie można mieć nieznaną liczbę gotówki");
+        }
+
     }
 
     public Double getSalary() {
@@ -36,19 +56,22 @@ public class Human extends Animal {
     }
 
     public Car getCar() {
-        System.out.println("Pobrałem dane samochodu");
         return car;
     }
 
     public void setCar(Car car) {
-        if (this.salary > car.getCarValue()) {
-            System.out.println("Udało się kupić za gotówkę");
-            this.car = car;
-        } else if (this.salary > car.getCarValue() / 12) {
-            System.out.println("Udało się kupić na kredyt ");
-            this.car = car;
+        if (car == null) {
+            this.car = null;
         } else {
-            System.out.println("Zapisz się na studia i znajdź nową robotę albo idź po podwyżkę");
+            if (this.salary > car.getCarValue()) {
+                System.out.println("Udało się kupić za gotówkę");
+                this.car = car;
+            } else if (this.salary > car.getCarValue() / 12) {
+                System.out.println("Udało się kupić na kredyt ");
+                this.car = car;
+            } else {
+                System.out.println("Zapisz się na studia i znajdź nową robotę albo idź po podwyżkę");
+            }
         }
     }
 

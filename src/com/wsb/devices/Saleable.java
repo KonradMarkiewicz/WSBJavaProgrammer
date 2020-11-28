@@ -1,8 +1,8 @@
 package com.wsb.devices;
 
-public interface Saleable {
-    public void sell();
+import com.wsb.creatures.Human;
 
-    public void sellOnCredit();
+public interface Saleable {
+    public void sell(Human seller, Human buyer, Double price) throws Exception;
 
 }

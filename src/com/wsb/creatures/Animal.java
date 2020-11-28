@@ -21,7 +21,7 @@ public class Animal {
                 weight = 2.0;
                 break;
             default:
-                System.out.println("No spiecies with that name in database!");
+//                System.out.println("No spiecies with that name in database!");
                 break;
         }
     }

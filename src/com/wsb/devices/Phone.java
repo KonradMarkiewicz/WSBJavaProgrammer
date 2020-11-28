@@ -1,6 +1,8 @@
 package com.wsb.devices;
 
-public class Phone extends Device {
+import com.wsb.creatures.Human;
+
+public class Phone extends Device implements Saleable {
 
     public final Double screenSize;
 
@@ -29,4 +31,23 @@ public class Phone extends Device {
     }
 
 
+    @Override
+    public void sell(Human seller, Human buyer, Double price) throws Exception {
+        if (seller.cash == null || buyer.cash == null) {
+            throw new Exception("Musisz zdefiniować stan konta");
+        }
+        if (seller.phone == null) {
+            System.out.println("Sorry nie masz telefonu");
+            throw new Exception("Brak telfonou");
+        }
+        if (buyer.getCash() < price) {
+            System.out.println("Sorry nie masz tyle kasy");
+            throw new Exception("Brak pieniędzy");
+        }
+        buyer.setCash(buyer.getCash() - price);
+        seller.setCash(seller.getCash() + price);
+        buyer.phone = seller.phone;
+        seller.phone = null;
+        System.out.println("telefon sprzedano za " + price + " od " + seller.firstName + " do " + buyer.firstName);
+    }
 }
