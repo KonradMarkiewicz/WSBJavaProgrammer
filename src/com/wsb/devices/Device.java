@@ -5,8 +5,19 @@ public class Device {
     public String producer;
     public String model;
 
+    public Device(Integer yearOfProduction, String producer, String model) {
+        this.yearOfProduction = yearOfProduction;
+        this.producer = producer;
+        this.model = model;
+    }
+
+    @Override
     public String toString() {
-        return this.producer + " " + this.model + " " + this.yearOfProduction;
+        return "Device{" +
+                "yearOfProduction=" + yearOfProduction +
+                ", producer='" + producer + '\'' +
+                ", model='" + model + '\'' +
+                '}';
     }
 }
 

@@ -1,13 +1,11 @@
 package com.wsb.devices;
 
 public class Car extends Device {
-    public final String color;
+    public String color;
     public Double value;
 
     public Car(Integer yearOfProduction, String producer, String model, String color, Double value) {
-        this.yearOfProduction = yearOfProduction;
-        this.producer = producer;
-        this.model = model;
+        super(yearOfProduction, producer, model);
         this.color = color;
         this.value = value;
     }
@@ -16,7 +14,16 @@ public class Car extends Device {
         return value;
     }
 
+    @Override
     public String toString() {
-        return this.producer + " " + this.model + " " + this.yearOfProduction;
+        return "Car{" +
+                "color='" + color + '\'' +
+                ", value=" + value +
+                ", yearOfProduction=" + yearOfProduction +
+                ", producer='" + producer + '\'' +
+                ", model='" + model + '\'' +
+                '}';
     }
+
+
 }

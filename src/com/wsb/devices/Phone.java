@@ -1,16 +1,23 @@
 package com.wsb.devices;
 
 public class Phone extends Device {
-    String model;
-    Double screenSize;
 
-    public Phone(String producer, String model, Double screenSize) {
-        this.producer = producer;
-        this.model = model;
+    public final Double screenSize;
+
+    public Phone(Integer yearOfProduction, String producer, String model, Double screenSize) {
+        super(yearOfProduction, producer, model);
         this.screenSize = screenSize;
     }
 
+    @Override
     public String toString() {
-        return this.producer + " " + this.model;
+        return "Phone{" +
+                "screenSize=" + screenSize +
+                ", yearOfProduction=" + yearOfProduction +
+                ", producer='" + producer + '\'' +
+                ", model='" + model + '\'' +
+                '}';
     }
+
+
 }

@@ -21,7 +21,7 @@ public class Main {
         Car fiat = new Car(2003, "Fiat", "Bravo", "gray", 10000.0);
         System.out.println("\n" + fiat.producer + " " + fiat.model + " " + fiat.yearOfProduction + "\n" + fiat.color + " " + fiat.value + " PLN" + "\n");
 
-        Phone phone = new Phone("Nokia", "3310", 2.0);
+        Phone phone = new Phone(1999, "Nokia", "3310", 2.0);
 
 //        human.getSalary();
 //        human.setSalary(10000.0);
