@@ -1,9 +1,6 @@
-package com.wsb;
+package com.wsb.devices;
 
-public class Car {
-    final public Integer yearOfProduction;
-    final public String producer;
-    final public String model;
+public class Car extends Device {
     public final String color;
     public Double value;
 
@@ -17,5 +14,9 @@ public class Car {
 
     public Double getCarValue() {
         return value;
+    }
+
+    public String toString() {
+        return this.producer + " " + this.model + " " + this.yearOfProduction;
     }
 }

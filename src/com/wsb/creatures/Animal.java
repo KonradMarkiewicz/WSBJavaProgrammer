@@ -1,4 +1,4 @@
-package com.wsb;
+package com.wsb.creatures;
 
 import java.io.File;
 
@@ -26,7 +26,7 @@ public class Animal {
         }
     }
 
-    void feed(Double foodWeight) {
+    public void feed(Double foodWeight) {
         if (this.isAlive) {
             this.weight += foodWeight;
             System.out.println("\nIt's feeding time!");
@@ -36,7 +36,7 @@ public class Animal {
         }
     }
 
-    void takeForAWalk() {
+    public void takeForAWalk() {
         if (this.isAlive) {
             this.weight--;
             System.out.println("\nIt's time for a walk!");
@@ -46,5 +46,9 @@ public class Animal {
                 System.out.println("Your animal died x.x");
             }
         }
+    }
+
+    public String toString() {
+        return this.species + " " + this.weight;
     }
 }

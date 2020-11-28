@@ -1,14 +1,20 @@
-package com.wsb;
+package com.wsb.creatures;
+
+import com.wsb.devices.Car;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Human {
-    String firstName;
-    String lastName;
-    Animal pet;
-    Double salary;
+public class Human extends Animal {
+    public Animal pet;
+    public String firstName;
+    public String lastName;
+    public Double salary;
     private Car car;
+
+    public Human() {
+        super("homo sapiens");
+    }
 
     public Double getSalary() {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
@@ -35,15 +41,19 @@ public class Human {
     }
 
     public void setCar(Car car) {
-        if (salary > car.getCarValue()) {
+        if (this.salary > car.getCarValue()) {
             System.out.println("Udało się kupić za gotówkę");
             this.car = car;
-        } else if (salary > car.getCarValue() / 12) {
+        } else if (this.salary > car.getCarValue() / 12) {
             System.out.println("Udało się kupić na kredyt ");
             this.car = car;
         } else {
             System.out.println("Zapisz się na studia i znajdź nową robotę albo idź po podwyżkę");
         }
+    }
+
+    public String toString() {
+        return this.firstName + " " + this.lastName;
     }
 
 }
