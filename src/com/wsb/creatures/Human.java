@@ -81,4 +81,8 @@ public class Human extends Animal {
         return this.firstName + " " + this.lastName;
     }
 
+    @Override
+    public void feed() {
+
+    }
 }

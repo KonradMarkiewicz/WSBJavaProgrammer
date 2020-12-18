@@ -4,7 +4,7 @@ import java.io.File;
 
 import static java.util.Locale.LanguageRange.MIN_WEIGHT;
 
-public class Animal {
+public abstract class Animal implements Feedable {
     final String species;
     public Boolean isAlive = true;
     String name;
@@ -14,8 +14,8 @@ public class Animal {
     public Animal(String species) {
         this.species = species;
         switch (species) {
-            case "dog":
-                weight = 5.0;
+            case "cow":
+                weight = 500.0;
                 break;
             case "cat":
                 weight = 2.0;
