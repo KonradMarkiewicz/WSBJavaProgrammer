@@ -30,6 +30,7 @@ public class Human extends Animal {
     public void setCash(Double cash) {
         if (cash != null) {
             this.cash = cash;
+            System.out.println(this.firstName + " - Ustalam nowy stan konta na " + cash);
         } else {
             System.out.println("nie można mieć nieznaną liczbę gotówki");
         }
@@ -50,7 +51,7 @@ public class Human extends Animal {
             System.out.println("Zmiana wynagrodzenia");
             System.out.println("Aneks do odebrania w kadrach");
             System.out.println("Dane zostały wysłane do ZUS i US");
-            System.out.println("Nowe wynagrodzenie to: " + newSalary);
+            System.out.println(this.firstName + " - Nowe wynagrodzenie to: " + newSalary);
             this.salary = newSalary;
         }
     }
@@ -60,17 +61,18 @@ public class Human extends Animal {
     }
 
     public void setCar(Car car) {
+        System.out.println(this.firstName + " - Próbuję kupić samochód");
         if (car == null) {
             this.car = null;
         } else {
             if (this.salary > car.getCarValue()) {
-                System.out.println("Udało się kupić za gotówkę");
+                System.out.println(this.firstName + " - Udało się kupić za gotówkę");
                 this.car = car;
             } else if (this.salary > car.getCarValue() / 12) {
-                System.out.println("Udało się kupić na kredyt ");
+                System.out.println(this.firstName + " - Udało się kupić na kredyt ");
                 this.car = car;
             } else {
-                System.out.println("Zapisz się na studia i znajdź nową robotę albo idź po podwyżkę");
+                System.out.println(this.firstName + " - Zapisz się na studia i znajdź nową robotę albo idź po podwyżkę");
             }
         }
     }

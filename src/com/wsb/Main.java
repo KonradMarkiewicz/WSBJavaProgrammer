@@ -18,10 +18,10 @@ public class Main {
 //            pet.feed(0.5);
 //        }
 
-        Car fiat = new Car(2003, "Fiat", "Bravo", "gray", 10000.0);
+        Car fiat = new Car(2003, "Fiat", "Bravo", "gray", 5000.0);
 //        System.out.println("\n" + fiat.producer + " " + fiat.model + " " + fiat.yearOfProduction + "\n" + fiat.color + " " + fiat.value + " PLN" + "\n");
 
-        Phone phone = new Phone(1999, "Nokia", "3310", 2.0);
+        Phone nokia = new Phone(1999, "Nokia", "3310", 2.0);
 
 //        me.getSalary();
 //        me.setSalary(10000.0);
@@ -40,7 +40,7 @@ public class Main {
 //        System.out.println(phone);
 //        System.out.println(fiat);
 
-        me.phone = phone;
+        me.phone = nokia;
         me.setSalary(10000.0);
         me.setCash(10000.0);
         me.setCar(fiat);
@@ -49,7 +49,7 @@ public class Main {
         brotherInLaw.setCash(3000.0);
 
         try {
-            phone.sell(me, brotherInLaw, 50.0);
+            nokia.sell(me, brotherInLaw, 50.0);
         } catch (Exception e) {
             System.out.println("Sorry, nie udało się sprzedać");
             System.out.println(e.getMessage());

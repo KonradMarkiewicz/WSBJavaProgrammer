@@ -48,6 +48,6 @@ public class Phone extends Device implements Saleable {
         seller.setCash(seller.getCash() + price);
         buyer.phone = seller.phone;
         seller.phone = null;
-        System.out.println("telefon sprzedano za " + price + " od " + seller.firstName + " do " + buyer.firstName);
+        System.out.println("Telefon sprzedano za " + price + " od " + seller.firstName + " do " + buyer.firstName);
     }
 }
