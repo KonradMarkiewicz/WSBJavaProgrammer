@@ -4,9 +4,11 @@ import com.wsb.creatures.Human;
 
 import java.io.Serializable;
 
-public class Car extends Device implements Saleable, Serializable, Comparable {
+public abstract class Car extends Device implements Saleable, Serializable, Comparable {
     public String color;
     public Double value;
+
+    abstract public void refuel();
 
     public Car(Integer yearOfProduction, String producer, String model, String color, Double value) {
         super(yearOfProduction, producer, model);

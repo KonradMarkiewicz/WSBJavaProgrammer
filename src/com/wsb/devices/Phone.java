@@ -2,8 +2,14 @@ package com.wsb.devices;
 
 import com.wsb.creatures.Human;
 
+import javax.xml.bind.annotation.XmlType;
+import java.util.List;
+
 public class Phone extends Device implements Saleable {
 
+    public static final String DEFAULT_APP_VERSION = "latest";
+    public static final String DEFAULT_PROTOCOL = "app.protocol";
+    public static final String DEFAULT_SERVER_NAME = "appserver.me.com";
     public final Double screenSize;
 
     public Phone(Integer yearOfProduction, String producer, String model, Double screenSize) {
@@ -30,7 +36,6 @@ public class Phone extends Device implements Saleable {
                 '}';
     }
 
-
     @Override
     public void sell(Human seller, Human buyer, Double price) throws Exception {
         if (seller.cash == null || buyer.cash == null) {
@@ -50,4 +55,25 @@ public class Phone extends Device implements Saleable {
         seller.phone = null;
         System.out.println("Telefon sprzedano za " + price + " od " + seller.firstName + " do " + buyer.firstName);
     }
+
+    public boolean installAnApp(String appName) {
+        return installAnApp(appName, DEFAULT_APP_VERSION);
+    }
+
+    public boolean installAnApp(String appName, String version) {
+        return installAnApp(appName, version, DEFAULT_SERVER_NAME);
+    }
+
+    public boolean installAnApp(String appName, String version, String server) {
+        System.out.println("Zainstalowano " + appName + " w wersji " + version + " z serwera " + server);
+        return true;
+    }
+
+    public boolean installAnApp(List<String> appNames) {
+        for (String appName : appNames) {
+            installAnApp(appName);
+        }
+        return true;
+    }
+
 }

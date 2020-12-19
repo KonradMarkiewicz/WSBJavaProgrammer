@@ -5,25 +5,18 @@ import java.io.File;
 import static java.util.Locale.LanguageRange.MIN_WEIGHT;
 
 public abstract class Animal implements Feedable {
+    final static Double DEFAULT_FOOD_WEIGHT = 1.0;
+
     final String species;
     public Boolean isAlive = true;
-    String name;
     Double weight;
-    File pic;
+
+    public void feed() {
+        feed(DEFAULT_FOOD_WEIGHT);
+    }
 
     public Animal(String species) {
         this.species = species;
-        switch (species) {
-            case "cow":
-                weight = 500.0;
-                break;
-            case "cat":
-                weight = 2.0;
-                break;
-            default:
-//                System.out.println("No spiecies with that name in database!");
-                break;
-        }
     }
 
     public void feed(Double foodWeight) {
