@@ -4,6 +4,7 @@ import com.wsb.creatures.FarmAnimal;
 import com.wsb.creatures.Pet;
 import com.wsb.devices.*;
 
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -32,5 +33,14 @@ public class Main {
         fiat.refuel();
         bmw.refuel();
         tesla.refuel();
+
+        try {
+            URL urlAddress = new URL("https",
+                    "defaultServer",
+                    8080,
+                    "gógl");
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
     }
 }

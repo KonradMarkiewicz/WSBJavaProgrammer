@@ -2,7 +2,7 @@ package com.wsb.devices;
 
 import com.wsb.creatures.Human;
 
-import javax.xml.bind.annotation.XmlType;
+import java.net.URL;
 import java.util.List;
 
 public class Phone extends Device implements Saleable {
@@ -76,4 +76,7 @@ public class Phone extends Device implements Saleable {
         return true;
     }
 
+    public boolean installAnApp(URL url) {
+        return true;
+    }
 }
